@@ -6,7 +6,7 @@ subtitle: Associate Professor
 
 profile:
   align: right
-  image: RuonanLiu_home.png
+  image: RuonanLiu.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Office: Room 530, Building 2, School of Electronic Information and Electrical Engineering, Shanghai Jiao Tong University</p>

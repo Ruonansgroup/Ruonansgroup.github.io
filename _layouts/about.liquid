@@ -56,6 +56,17 @@ layout: default
       {% include latest_posts.liquid %}
     {% endif %}
 
+    <!-- Selected video -->
+    {% if page.selected_video %}
+      <h2>Vision-and-Language Navigation</h2>
+      <h2>
+        <video width="80%" controls autoplay loop>
+          <source src="assets/video/vln_demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </h2>
+    {% endif %}
+
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>

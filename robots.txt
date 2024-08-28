@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://Ruonansgroup.io/sitemap.xml
+Sitemap: https://Ruonansgroup.github.io/sitemap.xml

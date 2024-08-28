@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Associate Professor
+subtitle: 
 
 profile:
   align: left

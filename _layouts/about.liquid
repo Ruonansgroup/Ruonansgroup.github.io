@@ -16,25 +16,24 @@ layout: default
 
   <article>
     {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 200px)
-      30vw, 50vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
+      <div class="row">
+        <div class="col-sm-3">
+          <img style="height: 175px;border-radius: 10px" src="/assets/img/RuonanLiu.png">      
+        </div>
+          
+        <div class="col-sm-9">
+          <h1 class="post-title">Ruonan Liu</h1>
+          <p class="desc"></p>
+          <p> 
+            Associate Professor
+            <br>Office: Room 530, Building 2, School of Electronic Information and Electrical Engineering, Shanghai Jiao Tong University
+            <br>Email: <a href="mailto:ruonan.liu@sjtu.edu.cn" target="_blank">ruonan.liu@sjtu.edu.cn</a>
+          </p>
+          <div class="social">
+             <div class="contact-icons">{% include social.liquid %}</div>
+            <div class="contact-note">{{ site.contact_note }}</div>
+          </div> 
+        </div>
       </div>
     {% endif %}
 

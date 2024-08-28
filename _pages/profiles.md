@@ -109,6 +109,3 @@ profiles5:
     image_circular: false # crops the image to make it circular
     more_info:
 ---
-
-If you are interested in Industrial Cyber-Physical Systems and Intelligent unmanned system, welcome to join us at ruonan.liu@sjtu.edu.cn.
-a

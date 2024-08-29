@@ -380,25 +380,23 @@ ul.task-list input[type="checkbox"] {
 // Social (bottom)
 
 .social {
-  text-align: center;
-
+  text-align: left;
   .contact-icons {
-    font-size: 4rem;
-
+    font-size: 2rem;
     a {
       i::before {
         color: var(--global-text-color);
         transition-property: all 0.2s ease-in-out;
       }
-
       &:hover {
         i::before {
           color: var(--global-theme-color);
         }
       }
     }
+    margin-top: -1rem;
+    margin-bottom: 1rem;
   }
-
   .contact-note {
     font-size: 0.8rem;
   }

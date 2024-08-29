@@ -93,7 +93,7 @@
               {{ author_last_html -}}
             </a>
           {%- else -%}
-            {% if author.first == "Ruonan" and author.last == "Liu" %}
+            {% if author.first == "Ruonan" and author.last == "Liu" and entry.corresponding_author %}
               <em>{{ author.first }} {{ author.last }}*</em>
             {%- else -%}
               {{- author.first }}

@@ -4,164 +4,183 @@ layout: page
 <div class="post">
   <span style="color:blue;font-size:20px;">If you are interested in Industrial Cyber-Physical Systems and Intelligent unmanned system, welcome to join us at ruonan.liu@sjtu.edu.cn.</span>
   <article>
-    <hr>
-    <h2>Professor</h2>
-    {% if page.profiles1 %}
-      {% for profile in page.profiles1 %}
-        <hr>
-        <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
-          {% if profile.image %}
-            {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-            {% if profile.image_circular %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-            {% else %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-            {% endif %}
-            {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-            {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image %}
-          {% endif %}
-          {% if profile.more_info %}
-            <div class="more-info">{{ profile.more_info }}</div>
-          {% endif %}
+    <style>
+      .profiles-container {
+        display: flex;
+        flex-direction: column; /* 使每个团队的布局垂直排列 */
+        align-items: center; /* 排列 */
+      }
+    
+      .team-container {
+        margin-bottom: 20px; /* 每个团队之间增加间距 */
+        width: 100%; /* 设置宽度为100%，保证占满容器 */
+      }
+    
+      .team-title {
+        text-align: left; /* 文本左对齐 */
+        font-weight: bold; /* 文字加粗 */
+        width: 100%; /* 设置宽度为100% */
+        padding-left: 10px; /* 添加左侧内边距，确保与成员卡片对齐 */
+      }
+    
+      .profile-card {
+        margin: 10px;
+        text-align: center; /* 排列样式：left, center */
+        flex: 1 1 calc(100% / 4 - 20px); /* 静态化列数，假设每行4列 */
+        box-sizing: border-box; /* 包含内边距和边框在内的宽度 */
+      }
+    
+      .profile-image {
+        width: 150px; /* 统一图片宽度 */
+        height: 200px; /* 统一图片高度 */
+        object-fit: cover; /* 保持图片比例 */
+        border-radius: 5%; /* 如果需要圆形图片 */
+      }
+    
+      .social-icons {
+        font-size: 24px;
+        color: #555;
+        margin-top: 10px;
+      }
+    
+      .social-icons a {
+        color: #1a0dab;
+        text-decoration: none;
+      }
+    
+      .social-icons i:hover {
+        color: #4A90E2;
+      }
+    
+      .more-info {
+        margin-top: 10px;
+      }
+    </style>
+    
+    <div class="profiles-container">
+      <div class="team-container">
+        <div class="team-title"><h2>Professor</h2></div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+          <div class="profile-card">
+            <img src="/assets/img/RuonanLiu.jpg" class="profile-image" alt="Profile image of Ruonan Liu">
+            <h3 style="font-size: 1.1em;">Ruonan Liu</h3>
+            <div class="more-info">
+              <a href="https://scholar.google.com/citations?user=jiAlRAwAAAAJ&hl=zh-CN">Google Scholar</a>
+              <a href="mailto:ruonan.liu@sjtu.edu.cn" target="_blank">Email</a>
+            </div>
+          </div>
         </div>
-
-        <div class="clearfix">
-          {% if profile.content %}
-            {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-            {{ profile_content | markdownify }}
-          {% else %}
-            {{ content }}
-          {% endif %}
+      </div>
+    
+      <div class="team-container">
+        <div class="team-title"><h2>PhD Students</h2></div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+          <div class="profile-card">
+            <img src="/assets/img/Xiuzhong Hu.jpg" class="profile-image" alt="Profile image of Xiuzhong Hu">
+            <h3 style="font-size: 1.1em;">Xiuzhong Hu</h3>
+            <div class="more-info"><p>Scene Reconstruction</p></div>
+          </div>
+    
+          <div class="profile-card">
+            <img src="/assets/img/Zihan Jiang.jpg" class="profile-image" alt="Profile image of Zihan Jiang">
+            <h3 style="font-size: 1.1em;">Zihan Jiang</h3>
+            <div class="more-info"><p>Pedestrian Path Prediction</p></div>
+          </div>
+    
+          <div class="profile-card">
+            <img src="/assets/img/Haoyu Wei.jpg" class="profile-image" alt="Profile image of Haoyu Wei">
+            <h3 style="font-size: 1.1em;">Haoyu Wei</h3>
+            <div class="more-info"><p>Vision-language Navigation</p></div>
+          </div>
         </div>
-      {% endfor %}
-    {% endif %}
-
-    <hr>
-    <h2>PhD Students</h2>
-    {% if page.profiles2 %}
-      {% for profile in page.profiles2 %}
-        <hr>
-        <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
-          {% if profile.image %}
-            {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-            {% if profile.image_circular %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-            {% else %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-            {% endif %}
-            {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-            {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image %}
-          {% endif %}
-          {% if profile.more_info %}
-            <div class="more-info">{{ profile.more_info }}</div>
-          {% endif %}
+      </div>
+    
+      <div class="team-container">
+        <div class="team-title"><h2>Master Students</h2></div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+          <div class="profile-card">
+            <img src="/assets/img/Quanhu Zhang.jpg" class="profile-image" alt="Profile image of Quanhu Zhang">
+            <h3 style="font-size: 1.1em;">Quanhu Zhang</h3>
+            <div class="more-info"><p>Causal Graph Reasoning</p></div>
+          </div>
+    
+          <div class="profile-card">
+            <img src="/assets/img/Zekang Li.png" class="profile-image" alt="Profile image of Zekang Li">
+            <h3 style="font-size: 1.1em;">Zekang Li</h3>
+            <div class="more-info"><p>Causal Graph Reasoning</p></div>
+          </div>
+    
+          <div class="profile-card">
+            <img src="/assets/img/Ping Kong.jpg" class="profile-image" alt="Profile image of Ping Kong">
+            <h3 style="font-size: 1.1em;">Ping Kong</h3>
+            <div class="more-info"><p>Vision-language Navigation</p></div>
+          </div>
+    
+          <div class="profile-card">
+            <img src="/assets/img/Shuai Wu.jpg" class="profile-image" alt="Profile image of Shuai Wu">
+            <h3 style="font-size: 1.1em;">Shuai Wu</h3>
+            <div class="more-info"><p>Vision-language Navigation</p></div>
+          </div>
+    
+          <div class="profile-card">
+            <img src="/assets/img/Yingying Li.jpg" class="profile-image" alt="Profile image of Yingying Li">
+            <h3 style="font-size: 1.1em;">Yingying Li</h3>
+            <div class="more-info"><p>Industrial Cyber-Physical Systems</p></div>
+          </div>
+    
+          <div class="profile-card">
+            <img src="/assets/img/Quanzhi Jiang.jpg" class="profile-image" alt="Profile image of Quanzhi Jiang">
+            <h3 style="font-size: 1.1em;">Quanzhi Jiang</h3>
+            <div class="more-info"><p>Vision-language Navigation</p></div>
+          </div>
+    
+          <div class="profile-card">
+            <img src="/assets/img/Junzhi Wang.jpg" class="profile-image" alt="Profile image of Junzhi Wang">
+            <h3 style="font-size: 1.1em;">Junzhi Wang</h3>
+            <div class="more-info"><p>Imitation Learning</p></div>
+          </div>
         </div>
-
-        <div class="clearfix">
-          {% if profile.content %}
-            {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-            {{ profile_content | markdownify }}
-          {% else %}
-            {{ content }}
-          {% endif %}
+      </div>
+    
+      <div class="team-container">
+        <div class="team-title"><h2>Undergraduate Students</h2></div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+          <div class="profile-card">
+            <img src="/assets/img/Yunfei Xie.jpg" class="profile-image" alt="Profile image of Yunfei Xie">
+            <h3 style="font-size: 1.1em;">Yunfei Xie</h3>
+            <div class="more-info"><p>Industrial Cyber-Physical Systems</p></div>
+          </div>
+    
+          <div class="profile-card">
+            <img src="/assets/img/Haochen Zhu.jpg" class="profile-image" alt="Profile image of Haochen Zhu">
+            <h3 style="font-size: 1.1em;">Haochen Zhu</h3>
+            <div class="more-info"><p>Cross-domain Collaborative</p></div>
+          </div>
+    
+          <div class="profile-card">
+            <img src="/assets/img/Tong Ge.jpg" class="profile-image" alt="Profile image of Tong Ge">
+            <h3 style="font-size: 1.1em;">Tong Ge</h3>
+            <div class="more-info"><p>Industrial Cyber-Physical Systems</p></div>
+          </div>
         </div>
-      {% endfor %}
-    {% endif %}
-
-    <hr>
-    <h2>Master Students</h2>
-    {% if page.profiles3 %}
-      {% for profile in page.profiles3 %}
-        <hr>
-        <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
-          {% if profile.image %}
-            {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-            {% if profile.image_circular %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-            {% else %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-            {% endif %}
-            {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-            {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image %}
-          {% endif %}
-          {% if profile.more_info %}
-            <div class="more-info">{{ profile.more_info }}</div>
-          {% endif %}
+      </div>
+    
+      <div class="team-container">
+        <div class="team-title"><h2>Alumnis</h2></div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+          <div class="profile-card">
+            <img src="/assets/img/Hao Wang.jpg" class="profile-image" alt="Profile image of Hao Wang">
+            <h3 style="font-size: 1.1em;">Hao Wang</h3>
+            <div class="more-info"><p>National Engineering Laboratory for Video Technology, Peking University</p></div>
+          </div>
+    
+          <div class="profile-card">
+            <img src="/assets/img/Dong Xiao.jpg" class="profile-image" alt="Profile image of Dong Xiao">
+            <h3 style="font-size: 1.1em;">Dong Xiao</h3>
+            <div class="more-info"><p>School of Software and Microelectronics, Peking University</p></div>
+          </div>
         </div>
-
-        <div class="clearfix">
-          {% if profile.content %}
-            {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-            {{ profile_content | markdownify }}
-          {% else %}
-            {{ content }}
-          {% endif %}
-        </div>
-      {% endfor %}
-    {% endif %}
-
-    <hr>
-    <h2>Undergraduate Students</h2>
-    {% if page.profiles4 %}
-      {% for profile in page.profiles4 %}
-        <hr>
-        <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
-          {% if profile.image %}
-            {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-            {% if profile.image_circular %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-            {% else %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-            {% endif %}
-            {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-            {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image %}
-          {% endif %}
-          {% if profile.more_info %}
-            <div class="more-info">{{ profile.more_info }}</div>
-          {% endif %}
-        </div>
-
-        <div class="clearfix">
-          {% if profile.content %}
-            {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-            {{ profile_content | markdownify }}
-          {% else %}
-            {{ content }}
-          {% endif %}
-        </div>
-      {% endfor %}
-    {% endif %}
-
-    <hr>
-    <h2>Alumnis</h2>
-    {% if page.profiles5 %}
-      {% for profile in page.profiles5 %}
-        <hr>
-        <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
-          {% if profile.image %}
-            {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-            {% if profile.image_circular %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-            {% else %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-            {% endif %}
-            {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-            {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image %}
-          {% endif %}
-          {% if profile.more_info %}
-            <div class="more-info">{{ profile.more_info }}</div>
-          {% endif %}
-        </div>
-
-        <div class="clearfix">
-          {% if profile.content %}
-            {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-            {{ profile_content | markdownify }}
-          {% else %}
-            {{ content }}
-          {% endif %}
-        </div>
-      {% endfor %}
-    {% endif %}
+      </div>
+    </div>
   </article>
 </div>

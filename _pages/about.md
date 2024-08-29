@@ -15,5 +15,5 @@ selected_introduction: true
 selected_video: true
 selected_image: true
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+social: false # includes social icons at the bottom of the page
 ---

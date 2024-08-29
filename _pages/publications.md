@@ -8,6 +8,9 @@ nav_order: 2
 ---
 
 <!-- _pages/publications.md -->
+<header class="post-header">
+  <p class="post-description"><sup>*</sup> Corresponding Author(s)</p>
+</header>
 
 <!-- Bibsearch Feature -->
 

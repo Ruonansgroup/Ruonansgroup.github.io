@@ -61,6 +61,29 @@ layout: page
       .more-info {
         margin-top: 10px;
       }
+
+      .p-social {
+        text-align: middle;
+        .contact-icons {
+          font-size: 2rem;
+          a {
+            i::before {
+              color: var(--global-text-color);
+              transition-property: all 0.2s ease-in-out;
+            }
+            &:hover {
+              i::before {
+                color: var(--global-theme-color);
+              }
+            }
+          }
+          margin-top: -1rem;
+          margin-bottom: 1rem;
+        }
+        .contact-note {
+          font-size: 0.8rem;
+        }
+      }
     </style>
     
     <div class="profiles-container">
@@ -70,7 +93,7 @@ layout: page
           <div class="profile-card">
             <img src="/assets/img/RuonanLiu.jpg" class="profile-image" alt="Profile image of Ruonan Liu">
             <h3 style="font-size: 1.1em;">Ruonan Liu</h3>
-            <div class="social" style="text-align:middle;">
+            <div class="p-social">
               <div class="contact-icons">{% include social.liquid %}</div>
             </div>
           </div>

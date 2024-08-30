@@ -4,7 +4,7 @@ permalink: /Group/
 title: Group
 description: 
 nav: true
-nav_order: 3
+nav_order: 5
 
 profiles1:
   # if you want to include more than one profile, just replicate the following block

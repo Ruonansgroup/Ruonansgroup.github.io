@@ -1,5 +1,5 @@
 ---
-layout: profiles
+layout: icps
 permalink: /ICPS/
 title: ICPS
 description: 

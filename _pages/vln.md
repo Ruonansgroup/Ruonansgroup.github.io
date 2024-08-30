@@ -1,5 +1,5 @@
 ---
-layout: profiles
+layout: vln
 permalink: /VLN/
 title: VLN
 description: 
